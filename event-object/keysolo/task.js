@@ -16,15 +16,25 @@ class Game {
     this.lossElement.textContent = 0;
   }
 
-  registerEvents() {
-    /*
-      TODO:
-      Написать обработчик события, который откликается
-      на каждый введённый символ.
-      В случае правильного ввода слова вызываем this.success()
-      При неправильном вводе символа - this.fail();
-     */
+
+  registerEvents() {    
+    const comparisonsSymbol = (e) => {
+      if (e.key === 'Shift') {
+        return;
+      } else {
+        console.log(e.key);
+        if (this.currentSymbol.textContent.toLowerCase().charCodeAt(0) === e.key.toLowerCase().charCodeAt(0)) {
+          this.success();
+        } else {
+          this.fail();
+        }        
+      }      
+    } 
+
+    let wordScreen = Array.from(document.getElementsByTagName('body'));
+    wordScreen.forEach((item) => {item.addEventListener('keydown', comparisonsSymbol)});
   }
+  
 
   success() {
     this.currentSymbol.classList.add('symbol_correct');
