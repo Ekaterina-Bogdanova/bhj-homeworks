@@ -6,6 +6,11 @@ chatWidget[0].addEventListener('click', function() {this.classList.add('chat-wid
 const inputMessage = document.getElementById('chat-widget__input');
 
 inputMessage.addEventListener('keydown', sendMessage);
+<<<<<<< HEAD
+=======
+inputMessage.addEventListener('keydown', askBot);
+
+>>>>>>> baa2f4e439df67cfb07434b5c3a8e6f230696811
 
 function sendMessage(event) {
   if (event.keyCode === 13) { 
@@ -13,8 +18,12 @@ function sendMessage(event) {
       createClientMessage();
       messages.lastElementChild.querySelector('.message__time').textContent = getCurrentTime();
       messages.lastElementChild.querySelector('.message__text').textContent = event.target.value;
+<<<<<<< HEAD
       event.target.value = '';
       askBot(); 
+=======
+      event.target.value = ''; 
+>>>>>>> baa2f4e439df67cfb07434b5c3a8e6f230696811
     }        
   }   
 }
@@ -38,13 +47,23 @@ function getCurrentTime() {
 }
 
 //Ответ бота
+<<<<<<< HEAD
 function askBot() {
+=======
+function askBot(event) {
+  if (event.keyCode === 13) {
+>>>>>>> baa2f4e439df67cfb07434b5c3a8e6f230696811
     setTimeout(() => {
       createClientMessage();
     messages.lastElementChild.className = 'message';
     messages.lastElementChild.querySelector('.message__time').textContent = getCurrentTime();
     messages.lastElementChild.querySelector('.message__text').textContent = getmessageBot();
     }, 500);
+<<<<<<< HEAD
+=======
+    
+  }
+>>>>>>> baa2f4e439df67cfb07434b5c3a8e6f230696811
 }
 
 //Получение случайного ответа бота
@@ -65,13 +84,18 @@ function getmessageBot() {
     'Командовать парадом буду я!',
     'У вас ещё остались вопросы?',
     'Всегда рады вам помочь!',
+<<<<<<< HEAD
     'Время, которое у вас есть, — это деньги, которых у нас нет...',
+=======
+    'Время, которое у нас есть, — это деньги, которых у нас нет...',
+>>>>>>> baa2f4e439df67cfb07434b5c3a8e6f230696811
     'Мы не будем с вами разговаривать, пока вы не купите у нас хотя бы один товар!'
   ];
   let index = Math.floor(Math.random() * messageBot.length);
   return messageBot[index];
 }
 
+<<<<<<< HEAD
 //messages.lastElementChild.scrollIntoView(false);
 
 // function getСoordinates() {
@@ -82,3 +106,5 @@ function getmessageBot() {
 
 //messages
 
+=======
+>>>>>>> baa2f4e439df67cfb07434b5c3a8e6f230696811
