@@ -14,9 +14,7 @@ function sendMessage(event) {
       messages.lastElementChild.querySelector('.message__time').textContent = getCurrentTime();
       messages.lastElementChild.querySelector('.message__text').textContent = event.target.value;
       event.target.value = '';
-      askBot(); 
-      event.target.value = ''; 
-
+      askBot();
     }        
   }   
 }
@@ -41,14 +39,12 @@ function getCurrentTime() {
 
 //Ответ бота
 function askBot() {
-    setTimeout(() => {
-      createClientMessage();
-    messages.lastElementChild.className = 'message';
-    messages.lastElementChild.querySelector('.message__time').textContent = getCurrentTime();
-    messages.lastElementChild.querySelector('.message__text').textContent = getmessageBot();
-    }, 500);
-  }
-
+  setTimeout(() => {
+    createClientMessage();
+  messages.lastElementChild.className = 'message';
+  messages.lastElementChild.querySelector('.message__time').textContent = getCurrentTime();
+  messages.lastElementChild.querySelector('.message__text').textContent = getmessageBot();
+  }, 500);  
 }
 
 //Получение случайного ответа бота
